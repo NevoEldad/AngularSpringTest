@@ -1,3 +1,58 @@
-<p>
-  main works!
-</p>
+<form>
+  <div class="container">
+    <div class="form-group">
+      <div class="row">
+        <div class="col col-md-3"></div>
+        <div class="col col-md-3">
+          ID:
+        </div>
+        <div class="col col-md-3">
+          <input type="text" name="id" id="id" [(ngModel)]="furniture.id" #id="ngModel" required>
+        </div>
+        <div class="col col-md-3">
+          <div [hidden]="id.valid || id.pristine" class="alert alert-danger">
+            ID is required
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-md-3"></div>
+      <div class="col col-md-3">
+        Name:
+      </div>
+      <div class="col col-md-3">
+        <input type="text" name="name" id="name" [(ngModel)]="furniture.name">
+      </div>
+      <div class="col col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col col-md-3"></div>
+      <div class="col col-md-3">
+        Price:
+      </div>
+      <div class="col col-md-3">
+        <input type="text" name="price" id="price" [(ngModel)]="furniture.price">
+      </div>
+      <div class="col col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col col-md-3"></div>
+      <div class="col col-md-3">
+        Type:
+      </div>
+      <div class="col col-md-3">
+        <input type="text" name="type" id="type" [(ngModel)]="furniture.type">
+      </div>
+      <div class="col col-md-3"></div>
+    </div>
+    <div class="row text-center">
+      <div class="col col-md-4"></div>
+      <div class="col col-md-4">
+        <button class="btn btn-success" (click)="createFurniture()"> Submit </button>
+      </div>
+      <div class="col col-md-4"></div>
+    </div>
+  </div>
+</form>

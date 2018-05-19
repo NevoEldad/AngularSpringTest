@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Furniture } from '../../../models/furniture';
+import { FurnitureService } from '../../services/furniture.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public furniture: Furniture;
+
+  constructor(private furnitureService: FurnitureService) {
+    this.furniture = new Furniture(null, null, null, null);
+  }
 
   ngOnInit() {
+  }
+
+  public createFurniture() {
+
+    this.furnitureService.createFurniture(this.furniture).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
   }
 
 }
