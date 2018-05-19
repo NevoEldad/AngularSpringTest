@@ -16,4 +16,8 @@ export class FurnitureService {
     { headers: { "ContentType": "application/json" }, 
     withCredentials: true });
   }
+
+  public getFurniture(): Observable<any> {
+    return this.http.get(this._URL + "getFurniture", { withCredentials: true });
+  }
 }
